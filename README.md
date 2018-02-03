@@ -2,5 +2,7 @@
 <br>
 <p>Below are links to each assignment.<p> 
 <br>
-[Assignment 1](https://w124gb.github.io/crp458/Assignment_1)
+<a href="https://w124gb.github.io/crp458/Assignment_1">Assignment 1</a>
+<a href="https://w124gb.github.io/crp458/Assignment_2">Assignment 2</a>
+<a href="https://w124gb.github.io/crp458/Assignment_3">Assignment 3</a>
 
