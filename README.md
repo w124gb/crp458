@@ -1,2 +1,3 @@
 Repository for all files for CRP 458
-[Assignment 1](https://github.com/user/repo/blob/branch/other_file.md)
+<br>
+[Assignment 1](https://w124gb.github.io/crp458/Assignment_1)
