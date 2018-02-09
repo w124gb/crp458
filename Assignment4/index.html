@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-<html>
-<body>
-   <h1>Assignment 4</h1>
-   <p>To start, what happens when I multiply 3 times 792?</p>
-   
-<button onclick=myMath(3, 792)>Try It!</button>
-<script> 
-    function myMath(p1, p2)
-   x =  p1 * p2;
-    document.getElementById(‘math’).innerHTML = x;
+<!doctype html>
 
-    </script>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Assignment 4</title>
+  <meta name="description" content="HTML 5 Template">
+  <meta name="author" content="Jonathan Dixon">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+
+</head>
+<body>
+    <!------- -->
+    <h1>Assignment 4</h1>
+    
+    <h2>Jonathan Dixon</h2>
+    <p id="test">Click Below.</p>
+    <button type="button" onclick="myTest()">Button</button>
+    <br>
+    <br>
+     <button type="button" onclick="animalFunction()">Animal Shuffle!</button>
+    <p id ="zoo"></p>
+    
+    <p>Type in the name of an auto manufacturer.</p>
+    <input id="myAutos" type="text">
+    <button onclick="enterAuto()" type="button">Enter</button>
+    <p id ="cars"></p>
+  <script src="script.js"></script>
 </body>
 </html>
