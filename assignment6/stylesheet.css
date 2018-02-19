@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    background-color: #DBA6A6;
+    
+    margin-bottom: 50px;
+}
+body {
+    background-color: #F8F8FF;
+}
+
+.blue {
+	color: blue;
+}
+.black {
+	color: black;
+}
+.red {
+	color: red;
+}
