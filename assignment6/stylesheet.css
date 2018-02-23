@@ -1,6 +1,7 @@
 h1 {
     text-align: center;
-    background-color: #DBA6A6;
+    background-color: #b34d80;
+    padding: 80px;
     
     margin-bottom: 50px;
 }
@@ -16,4 +17,19 @@ body {
 }
 .red {
 	color: red;
+}
+.green {
+	color: green;
+}
+#slide, #slide2 {
+     padding: 20px;
+    text-align: center;
+    text-shadow: 1px;
+    background-color: #33cc33
+;
+    border: solid 2px ##40bf40	;
+}
+#slide2 {
+    padding: 20px;
+    display: none;
 }

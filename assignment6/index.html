@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>jQuery Playground</title>
-	<script src="script.js"></script>
+	<script src="script.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/styles.css?v=1.0">
      <link rel = "stylesheet"
    type = "text/css"
@@ -15,12 +17,25 @@
 <body>
 <h1>Assignment 6</h1>
 <br>
-<p id="test">This is some <i>italicized</i> text in a paragraph.</p>
-
-<button id="btn1">Show Text</button>
+<p id="ex1">This is an example of hiding and showing text.</p>
+<button id="btn1">Hide Text</button>
+<button id="btn2">Show Text</button>    
 <br>
 <br>
-
+    <h2> <span id="colorChange">Color Changing</span></h2>
+<p>Click on the different colors to change the heading</p>
+    <ul>
+    <li><span class="green">Green</span></li>
+    <li><span class="blue">Blue</span></li>
+    <li><span class="red">Red</span></li>
+    <li><span class="black">Black</span></li>    
+    </ul>
+<br>
+<h2>Slide Rule.</h2>
+<div id="slide"><strong>Clicking slides the panel.</strong></div>
+<div id="slide2"><strong>It works well.</strong></div>
+    
+    
   <script src="script.js"></script>	
 </body>
 </html>
