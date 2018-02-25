@@ -1,0 +1,34 @@
+#menu-container {
+    font: serif;
+    position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 500px;
+  border:;
+  border-width: 1px;
+}
+#basemap {
+    text-align: center;
+    color: white;
+    position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 160px;
+  height: 500px;
+  background-color: #062f4f;
+  padding-left: absolute;
+  font-size: ;
+}
+h4 {
+    margin-bottom: auto;
+    text-align: center;
+}
+
+img {
+  position: absolute;
+  left: 150px;
+  top: 0px;
+  z-index: -1;
+  display: none;
+}
