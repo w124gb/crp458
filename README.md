@@ -14,4 +14,4 @@
  <br>
 <a href="https://w124gb.github.io/crp458/assignment6">Assignment 6</a>
  <br>
-<a href="https://w124gb.github.io/crp458/assignment7">Assignment 7</a>
+<a href="https://w124gb.github.io/crp458/Assignment7">Assignment 7</a>
