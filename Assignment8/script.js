@@ -4,45 +4,58 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-//this will add one marker
 L.marker([53.431016, -2.960846]).addTo(map)
    .bindPopup("Anfield Park aka The KOP")
    .openPopup();
 
 
-
-
-//----------Adding multiple town markers----------
-
-//a array list of towns
-var towns = [
+var city = [
 	[41.590833, -93.620833, "Des Moines, Iowa"],
 	[42.03,-93.63, "Ames, Iowa"],
-	[41.84, -94.1, "Perry, Iowa"]
+	[41.84, -94.1, "Perry, Iowa"],
+      [41.63,-93.72, "Urbandale, Iowa"],
+    [59.33,18.07, "Stockholm, Sweden"]
 ];
 
-//loop through the array and add a marker for each
-for (var i = 0; i < towns.length; i++) {
-	marker = new L.marker([towns[i][0],towns[i][1]])
-	.bindPopup(towns[i][2])
+
+for (var i = 0; i < city.length; i++) {
+	marker = new L.marker([city[i][0],city[i][1]])
+	.bindPopup(city[i][2])
 	.addTo(map);
 }
 
 
-//----------Links below the Map----------
 
-//Pan to Urbandale
+//Urbandale
 function urbandale() {
-	map.panTo(new L.LatLng(41.63,-93.72),7);
+	map.panTo(new L.LatLng(41.63,-93.72), 10);
 }
 
 //set Zoom
 $("#zoomOut").click(function(){
-	map.setZoom(8);
+	map.setZoom(9);
 });
 
 
 //Stockholm, Sweden
 $("#stockholm").click(function(){
-	map.setView(new L.LatLng(59.33,18.07), 13);
+	map.setView(new L.LatLng(59.33,18.07), 11);
 });
+
+//Circle Marker
+L.circle([59.33,18.07], {
+	radius: 4000,
+	fill: true, 
+	color: 'green', 
+	fillColor: 'green',
+	fillOpacity: 0.5  //this represents 50%
+ }).bindPopup("Stockholm, Sweden").addTo(map);
+
+
+L.circleMarker([41.63,-93.72], {
+    radius: 100,  //in pixels
+	fillColor: 'yellow',
+	weight: 0, 
+	opacity: 0, 
+	fillOpacity: 0.5
+}).bindPopup("This is a circle marker").addTo(map);
