@@ -64,4 +64,4 @@ var overlayMaps = {
     "Polygons": polygon
 };
 
-L.control.layers(baseMaps, overlayMaps).addTo('map');
+L.control.layers(baseMaps, overlayMaps).addTo(map);
