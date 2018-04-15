@@ -1,0 +1,38 @@
+#map {  position:relative;
+     width: 800px;
+     height: 500px;
+}#container{
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 15px;
+}
+#header, #footer {
+	padding: 10px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.legend {
+    line-height: 12px;
+    color: grey;
+}
+.legend i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.9;
+}
+.info {
+    padding: 6px 8px;
+    font: 10px/20px Arial, Helvetica, sans-serif;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
