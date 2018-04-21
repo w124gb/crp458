@@ -27,3 +27,8 @@
 <a href="https://w124gb.github.io/crp458/Assignment_12">Assignment 12</a>
   <br>
 <a href="https://w124gb.github.io/crp458/Assignment_13">Assignment 13</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/Assignment_14">Assignment 14</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/miniMap">Mini Map</a>
+  
