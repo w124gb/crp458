@@ -32,5 +32,5 @@
   <br>
 <a href="https://w124gb.github.io/crp458/miniMap">Mini Map</a>
   <br>
-<a href="https://w124gb.github.io/crp458/Final>Final</a>
+<a href="https://w124gb.github.io/crp458/Final">Final</a>
   
