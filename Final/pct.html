@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<meta name="Jonathan Dixon" content="PCT Final">
+<html>
+    <head>
+
+<meta name="description" content="Final Project ">
+        	
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+		
+
+<!--Load in Leaflet AJAX loader required for direct loading of GEOJSON files without a var somename = -->
+<script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+		
+
+	<style id="jsbin-css">
+html, body, #map {
+    height: 700px;
+    margin: 0;
+    padding: 0;
+}
+
+</style>
+</head>	
+	<body>
+           <div id="container">
+      <div id = "header">
+    <h3>Jonathan Dixon  </h3>
+    <h3> Final Project</h3>
+    <h3>CRP 458</h3>
+        </div>
+		<div id="map"></div>
+               <div id = "footer"><i>Iowa State University</i></div>
+               </div>
+        
+<style>
+#map {  position:relative;
+     width: 800px;
+     height: 500px;
+}#container{
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 15px;
+}
+#header, #footer {
+	padding: 10px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.legend {
+    line-height: 12px;
+    color: grey;
+}
+.legend i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.9;
+}
+#css {
+    background: #649173;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+html {
+    background: #649173;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}        
+
+        
+</style>        
+	<script id="jsbin-javascript">
+        
+        
+console.clear();
+
+var map;
+
+//Load in the geojson file
+//Using your link because my failed to load
+myURL = "https://profseeger.github.io/LA558/data/pacificCrestTrails.geojson";
+
+
+//Base Layers
+var OSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 18
+});
+
+
+//create the map
+map = L.map('map', {
+  center: new L.LatLng(43.03, -117),
+  zoom: 5,
+  layers: [OSM]
+});
+
+
+
+var geoJsonLayer = new L.GeoJSON.AJAX(myURL, {
+
+  pointToLayer: function(feature, latlng) {
+    return new L.circleMarker(latlng, {
+      stroke: true,
+      weight: 2,
+      color: '#000000',
+      opacity: 1.0,
+      fillColor: 'blue',
+      fillOpacity: 0.9,
+      radius: 5,
+    });
+  },
+});
+
+geoJsonLayer.addTo(map);
+</script>
+</body>
+</html>
