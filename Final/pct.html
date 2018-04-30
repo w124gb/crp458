@@ -31,11 +31,16 @@ html, body, #map {
     <h3>Jonathan Dixon  </h3>
     <h3> Final Project Pacific Crest Trail Map</h3>
     <h3>CRP 458</h3>
+          <p>The Pacific Crest Trail are a group of hiking trails that wind through California, Oregon, and Washington. It runs Norht to South or South to North(whichever way you want to hike!) for a total of 2,650 Miles.</p>
+          <h4>Stats and Info about the PCT</h4>
         </div>
 		<div id="map"></div>
                <div id = "footer"><i>Iowa State University</i></div>
                </div>
-        
+        Check the days weather in the town you are hiking through.<br>  (abbreviation not currently allowed, weather not currently loading)<br>
+<input type="text" id="city" value="Boone, Iowa">&nbsp;&nbsp;
+<input type="button" id="load" value="Load Weather Information"><br><br>
+        <div id="weather"></div>
 <style>
 #map {  position:relative;
      width: 800px;
@@ -82,9 +87,11 @@ background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, F
 </style>        
 	<script id="jsbin-javascript">
         
-        
-console.clear();
+var data;
+console.clear(); 
 
+var marker = ' ';
+        
 var map;
 
         
@@ -175,8 +182,47 @@ var geojsonLayer1 = new L.GeoJSON.AJAX(myURL2, {
     layer.bindPopup("Mag: " + feature.properties.mag + "<br> Place: " + feature.properties.place);
   }
 }).addTo(map);
-  
-        
+/*
+       
+$(document).ready(function() {
+  var city = '';
+  $("#load").click(function() {
+    city = $("#city").val();
+
+    // get data:
+    getWeather(function(data) {
+      console.log('weather data received for ' + data.name);
+      displayData = "<strong>" + "Current Weather for " + data.name + ":</strong> " + data.weather[0].description + "<br>" + " Temperature (F): " + data.main.temp + "<br>" + "Pressure:" + data.main.pressure + "<br>" + "Humidity:" + data.main.humidity + "<br>";
+      displayData = displayData + "Longitude: " + data.coord.lon + "<br>Latitude: " + data.coord.lat + ". <br><br>";
+      $("#weather").html(displayData);
+      displayData = ""; //clear var
+
+      map.removeLayer(marker);
+      marker = L.marker([data.coord.lat, data.coord.lon], {
+        draggable: false,
+        title: data.name,
+        opacity: 0.75,
+      }).addTo(map).bindPopup("Current Weather: " + data.weather[0].description + "<br>Temp: " + data.main.temp + "F");
+
+
+
+    });
+  });
+
+
+
+  function getWeather(callback) {
+    console.log(city);
+    var url =
+      'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&mode=json&units=imperial&appid=decf9ef4753a19429d3573c88f8c8776';
+    $.ajax({
+      dataType: "jsonp",
+      url: url,
+      success: callback
+    });
+  }
+});        
+*/      
 var baseMaps = {
     "OSM" : OSM,
       "Topo Map" : OpenTopoMap,
