@@ -119,12 +119,26 @@ var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
         
-        
+var mountain = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/w124gb/crp458/5360c5ff/data/peak.png',
+
+  iconSize: [35, 40],
+  iconAnchor: [15, 40],
+  popupAnchor: [1, -34],
+});
+
+
+var cities = L.layerGroup();
+
+var foresterPass = L.marker([36.694102, -118.37204], {icon: mountain}).bindPopup('Forester Pass').addTo(cities);
+    Salem = L.marker([44.942898, -123.035096]).bindPopup('Salem, OR').addTo(cities);
+    Eugene = L.marker([44.052069, -123.086754]).bindPopup('Eugen, OR').addTo(cities);
+    Bend = L.marker([44.058173, -121.31531]).bindPopup('Bend,OR').addTo(cities);        
 
 map = L.map('map', {
   center: new L.LatLng(41.53, -119),
   zoom: 5,
-  layers: [Esri_NatGeoWorldMap]
+  layers: [Esri_NatGeoWorldMap, cities]
 });
 
 var geoJsonLayer = new L.GeoJSON.AJAX(myURL, {
@@ -226,7 +240,8 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-    "Earthquakes": geojsonLayer1
+    "Earthquakes" : geojsonLayer1,
+    "Lighthouse" : cities
 
 };
 
