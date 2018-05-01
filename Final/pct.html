@@ -138,10 +138,10 @@ var mountain = new L.Icon({
 var cities = L.layerGroup();
 
 var foresterPass = L.marker([36.694102, -118.37204], {icon: mountain}).bindPopup('Forester Pass').addTo(cities);
-    Salem = L.marker([44.942898, -123.035096]).bindPopup('Salem, OR').addTo(cities);
+   /* Salem = L.marker([44.942898, -123.035096]).bindPopup('Salem, OR').addTo(cities);
     Eugene = L.marker([44.052069, -123.086754]).bindPopup('Eugen, OR').addTo(cities);
     Bend = L.marker([44.058173, -121.31531]).bindPopup('Bend,OR').addTo(cities);        
-
+*/
 map = L.map('map', {
   center: new L.LatLng(41.53, -119),
   zoom: 5,
@@ -248,7 +248,7 @@ var baseMaps = {
 
 var overlayMaps = {
     "Earthquakes" : geojsonLayer1,
-    "Lighthouse" : cities
+    "Summit" : cities
 
 };
 
