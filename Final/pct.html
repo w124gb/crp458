@@ -16,14 +16,6 @@
 <script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
 		
 
-	<style id="jsbin-css">
-html, body, #map {
-    height: 700px;
-    margin: 0;
-    padding: 0;
-}
-
-</style>
 </head>	
 	<body>
            <div id="container">
@@ -38,10 +30,12 @@ html, body, #map {
                <div id = "footer"><i>Iowa State University</i></div>
                </div>
         Check the days weather in the town you are hiking through.<br>  (abbreviation not currently allowed, weather not currently loading)<br>
-<input type="text" id="city" value="Boone, Iowa">&nbsp;&nbsp;
+<input type="text" id="city" value="Ames, Iowa">&nbsp;&nbsp;
 <input type="button" id="load" value="Load Weather Information"><br><br>
         <div id="weather"></div>
 <style>
+    
+
 #map {  position:relative;
      width: 800px;
      height: 500px;
@@ -182,9 +176,9 @@ var geojsonLayer1 = new L.GeoJSON.AJAX(myURL2, {
     layer.bindPopup("Mag: " + feature.properties.mag + "<br> Place: " + feature.properties.place);
   }
 }).addTo(map);
-/*
-       
-$(document).ready(function() {
+
+  /*     
+(document).ready(function() {
   var city = '';
   $("#load").click(function() {
     city = $("#city").val();
@@ -210,7 +204,6 @@ $(document).ready(function() {
   });
 
 
-
   function getWeather(callback) {
     console.log(city);
     var url =
@@ -222,7 +215,8 @@ $(document).ready(function() {
     });
   }
 });        
-*/      
+*/
+
 var baseMaps = {
     "OSM" : OSM,
       "Topo Map" : OpenTopoMap,
