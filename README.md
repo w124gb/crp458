@@ -30,6 +30,24 @@
   <br>
 <a href="https://w124gb.github.io/crp458/Assignment_14">Assignment 14</a>
   <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 15</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 16</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 17</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 18</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 19</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 20</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 22</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 24</a>
+  <br>
+<a href="https://w124gb.github.io/crp458/">Assignment 25</a>
+  <br>
 <a href="https://w124gb.github.io/crp458/miniMap">Mini Map</a>
   <br>
 <a href="https://w124gb.github.io/crp458/Final/pct.html">Final</a>
