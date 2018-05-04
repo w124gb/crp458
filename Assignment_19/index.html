@@ -12,20 +12,23 @@
 
 </head>
 <body>
-   <div id = "header">
+   <div id="container">
+      <div id = "header">
     <h2>LA 558  </h2>
      <h3> Assignment 19</h3>
      
-	       <div>
+	   
            <br>
 	        <button onclick="getLocation()">Get location</button>
 
 	        <div id = "myLocation">Please Allow Location Services!</div>
-     </div>
-     </div>   
+     
+     </div> 
+   
         <div id='map'></div>
       <div id = "footer"><i>Iowa State University</i></div>
-<script>
+ </div>
+       <script>
 var map = L.map('map').setView([41.88, -93.10], 2);
 
 // adding an OpenStreetMap tile layer
