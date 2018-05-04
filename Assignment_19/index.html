@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+  <title>Assignment19</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+
+</head>
+<body>
+   <div id = "header">
+    <h2>LA 558  </h2>
+     <h3> Assignment 19</h3>
+     
+	       <div>
+           <br>
+	        <button onclick="getLocation()">Get location</button>
+
+	        <div id = "myLocation">Please Allow Location Services!</div>
+     </div>
+     </div>   
+        <div id='map'></div>
+      <div id = "footer"><i>Iowa State University</i></div>
+<script>
+var map = L.map('map').setView([41.88, -93.10], 2);
+
+// adding an OpenStreetMap tile layer
+var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+
+// code for geolocation
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        $("#myLocation").html("Geolocation is not supported by this browser.");
+    }
+}
+
+map.locate({setView: true, maxZoom: 16});
+
+
+function showPosition(position) {
+	 $("#myLocation").html("Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude);
+  
+  // code for marker
+   var marker=L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+    marker.bindPopup("Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude).openPopup();
+}
+
+
+	
+
+
+
+
+
+
+
+</script>
+    </body>
+</html>
