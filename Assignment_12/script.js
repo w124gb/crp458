@@ -21,12 +21,9 @@ var polygon = L.polygon([
 /*
 var sealion = {
     "type": "Feature",
-    "properties": {
-        "name": "Sea Lion Caves",
-        "popupContent": "Sea Lions Live Here!"
-    },
+    "properties": {},
     "geometry": {
-        "type": "Point",
+        "type": "point",
         "coordinates": [44.121789, -124.126661]
     }
 };

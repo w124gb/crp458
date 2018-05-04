@@ -47,29 +47,38 @@ var Stamen_TonerLabels = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/
 	ext: 'png'
 
 });
-
+/*
 var SF= L.marker([37.7749,-122.4194]).bindPopup("San Francisco"),
 		LA= L.marker([34.052234, -118.243685]).bindPopup("Los Angeles"),
 		PDX = L.marker([45.523062, -122.676482]).bindPopup("Portland"),
     SEA = L.marker([47.606209, -122.332071]).bindPopup("Seattle");
 var points = L.layerGroup([SF, DC, PDX, SEA]);
-
-earthquakes = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
+*/
+myURL2 = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";        
+        
 var geojsonMarkerOptions = {
+
   color: "#000",
   weight: 0, //set this to one to add a black outline to each marker
   opacity: 1,
-  fillOpacity: 0.3
+  fillOpacity: 0.7
 };
 
-var geojsonLayer = new L.GeoJSON.AJAX(earthquakes, {
+//set color of circle
+function getColor(d) {
+  return d > 5 ? '#FF0000' : //red
+    d > 3 ? 'yellow' :
+    d > 1 ? 'grey' :
+    '#FFFFFF'; //white
+}
+
+var geojsonLayer1 = new L.GeoJSON.AJAX(myURL2, {
   pointToLayer: function(feature, latlng) {
     return new L.CircleMarker(latlng, geojsonMarkerOptions);
   },
   style: function(feature) {
-    //console.log(feature.properties.mag);//note this is how you access contents of each quake within L.geoJson
     return {
-      radius: feature.properties.mag * 2,
+      radius: feature.properties.mag * 1.5,
       fillColor: getColor(feature.properties.mag)
     };
   },
@@ -77,20 +86,6 @@ var geojsonLayer = new L.GeoJSON.AJAX(earthquakes, {
     layer.bindPopup("Mag: " + feature.properties.mag + "<br> Place: " + feature.properties.place);
   }
 }).addTo(map);
-
-// Get weekly total
-$.ajax({
-  url: earthquakes,
-  dataType: 'json',
-}).done(function(data) {
-  totalNumber = data.features.length;
-  $("#totalNumber").html(totalNumber);
-});
-$('#clearLayers').click(function() {
-  map.removeLayer(geojsonLayer);
-});
-
-
 
 
 // Layer Control
@@ -101,8 +96,8 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-  "Places": points,
-  "Earthquakes": geojsonLayer,
+  //"Places": points,
+  "Earthquakes": geojsonLayer1,
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
