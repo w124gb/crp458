@@ -1,3 +1,61 @@
+var cities = L.layerGroup();
+
+var Portland = L.marker([45.523062, -122.676482]).bindPopup('Portland, OR').addTo(cities);
+    Salem = L.marker([44.942898, -123.035096]).bindPopup('Salem, OR').addTo(cities);
+    Eugene = L.marker([44.052069, -123.086754]).bindPopup('Eugen, OR').addTo(cities);
+    Bend = L.marker([44.058173, -121.31531]).bindPopup('Bend,OR').addTo(cities);
+
+
+var polygon = L.polygon([
+				[44.004239, -121.177980],
+				[44.004239, -123.177980],
+				[45.733711, -123.177980],
+				[45.733711, -121.177980]
+],{
+			
+				color: 'lightblue',
+				fillColor: 'lightblue',
+				fillOpacity: 0.5,
+	
+});
+/*
+var sealion = {
+    "type": "Feature",
+    "properties": {
+        "name": "Sea Lion Caves",
+        "popupContent": "Sea Lions Live Here!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [44.121789, -124.126661]
+    }
+};
+
+L.geoJSON(sealion).addTo(map);
+
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}
+
+var sealion = {
+    "type": "Feature",
+    "properties": {
+        "name": "Sea Lion Caves",
+        "popupContent": "Sea Lions Live Here!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [44.121789, -124.126661]
+    }
+};
+
+L.geoJSON(sealion, {
+    onEachFeature: onEachFeature
+}).addTo(map);
+*/
 var OSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 18
@@ -22,12 +80,6 @@ var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</
 var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
     streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
      
-var cities = L.layerGroup();
-
-var Portland = L.marker([45.523062, -122.676482]).bindPopup('Portland, OR').addTo(cities);
-    Salem = L.marker([44.942898, -123.035096]).bindPopup('Salem, OR').addTo(cities);
-    Eugene = L.marker([44.052069, -123.086754]).bindPopup('Eugen, OR').addTo(cities);
-    Bend = L.marker([44.058173, -121.31531]).bindPopup('Bend,OR').addTo(cities);
 
 
 var map = L.map('map', {
@@ -36,55 +88,7 @@ var map = L.map('map', {
     layers: [cities, OSM]
 });
 
-var polygon = L.polygon([
-				[44.004239, -121.177980],
-				[44.004239, -123.177980],
-				[45.733711, -123.177980],
-				[45.733711, -121.177980]
-],{
-			
-				color: 'lightgreen',
-				fillColor: 'lightgreen',
-				fillOpacity: 0.5,
-	
-});
-/*
-var sealion = {
-    "type": "Feature",
-    "properties": {
-        "name": "Sea Lion Caves",
-        "popupContent": "Sea Lions Live Here!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [44.121789, -124.126661]
-    }
-};
 
-L.geoJSON(sealion).addTo(map);
-*/
-function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.popupContent) {
-        layer.bindPopup(feature.properties.popupContent);
-    }
-}
-
-var sealion = {
-    "type": "Feature",
-    "properties": {
-        "name": "Sea Lion Caves",
-        "popupContent": "Sea Lions Live Here!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [44.121789, -124.126661]
-    }
-};
-
-L.geoJSON(sealion, {
-    onEachFeature: onEachFeature
-}).addTo(map);
 
 var baseMaps = {
       "Topo Map" : OpenTopoMap,
@@ -94,8 +98,8 @@ var baseMaps = {
 
 var overlayMaps = {
     "Cities": cities,
-    "Polygons": polygon,
-   "sealion": SeaLion
+   "Polygon": polygon,
+  // "Sealion": seaLion
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
