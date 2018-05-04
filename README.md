@@ -1,45 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <style>
-    
-
-#map {  position:relative;
-     width: 800px;
-     height: 500px;
-     align-content: center;
-}#container {
-	width: 800px;
-	margin-right: auto;
-	margin-left: auto;
-   border-style: solid;
-   border-width: 15px;
-}
-#header, #footer {
-	padding: 10px;
-	background-color: black;
-	color: white;
-	text-align: center;
-}
-
-#css {
-    background: #649173;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-html {
-    background: #649173;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-       }
-
-    </style> 
-
-</head>
-<body>
 <h1>Jonathan Dixon</h1>
 <h1>CRP 458</h1>
 <br>
@@ -93,8 +51,7 @@ background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, F
   <br>
 <a href="https://w124gb.github.io/crp458/miniMap">Mini Map</a>
   <br>
+<a href="https://w124gb.github.io/crp458/Gallery">Gallery</a>
+  <br>
 <a href="https://w124gb.github.io/crp458/Final/pct.html">Final</a>
 
-    
-    </body> 
-</html>
